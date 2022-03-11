@@ -14,19 +14,23 @@ public class IntroPage {
         panel = frame.getContentPane();
         frame.setLocationRelativeTo(null);
         panel.setLayout(null);
-        frame.setSize(width , height);
 
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        //System.out.println(dimension);
+        int x = (int) (dimension.getWidth())/2 - (width/2);
+        int y = (int) (dimension.getHeight())/2 - (height/2);
+        frame.setBounds(x, y, width, height);
 
         text = new JLabel("", SwingConstants.CENTER);
-        text.setBounds(0, 0, width , 150);
+        text.setBounds(0, 0, width, 150);
         panel.add(text);
 
         text2 = new JLabel("", SwingConstants.CENTER);
-        text2.setBounds(0, 0, width , 180);
+        text2.setBounds(0, 0, width, 180);
         panel.add(text2);
 
         text3 = new JLabel("", SwingConstants.CENTER);
-        text3.setBounds(0, 0, width , 210);
+        text3.setBounds(0, 0, width, 210);
         panel.add(text3);
     }
 
@@ -52,7 +56,7 @@ public class IntroPage {
 
             JButton Instructions = new JButton();
             Instructions.setText("Instructions");
-            Instructions.setBounds(75, 120, 100, 70);
+            Instructions.setBounds(65, 120, 120, 70);
             panel.add(Instructions);
             Instructions.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -62,11 +66,12 @@ public class IntroPage {
 
             JButton start = new JButton();
             start.setText("START");
-            start.setBounds(225, 120, 100, 70);
+            start.setBounds(215, 120, 120, 70);
             panel.add(start);
             start.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     ClothesGUI.run();
+                    frame.dispose();
                 }
             });
         }
@@ -81,7 +86,8 @@ public class IntroPage {
             panel.add(back);
             back.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    windowNum = 0;
+                    windowNum = -1;
+                    next();
                 }
             });
 
@@ -106,7 +112,8 @@ public class IntroPage {
             panel.add(back);
             back.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    windowNum = 1;
+                    windowNum = 0;
+                    next();
                 }
             });
 
@@ -131,6 +138,7 @@ public class IntroPage {
             back.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     windowNum = 1;
+                    next();
                 }
             });
 
@@ -210,4 +218,6 @@ public class IntroPage {
     public static void main(String[] args) {
         doEverything();
     }
+
+
 }

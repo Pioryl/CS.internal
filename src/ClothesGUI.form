@@ -3,9 +3,11 @@
   <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="8" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="5" left="5" bottom="5" right="5"/>
     <constraints>
-      <xy x="20" y="20" width="1104" height="244"/>
+      <xy x="20" y="20" width="1129" height="244"/>
     </constraints>
-    <properties/>
+    <properties>
+      <alignmentX value="0.5"/>
+    </properties>
     <border type="none"/>
     <children>
       <component id="1cd78" class="javax.swing.JLabel" binding="weatherForecast">
@@ -16,14 +18,6 @@
         </constraints>
         <properties>
           <text value="current weather conditions:"/>
-        </properties>
-      </component>
-      <component id="80d5b" class="javax.swing.JButton" binding="updateButton">
-        <constraints>
-          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Update clothing and weather"/>
         </properties>
       </component>
       <component id="ec091" class="javax.swing.JLabel">
@@ -86,7 +80,7 @@
         </constraints>
         <properties>
           <hideActionText value="true"/>
-          <text value="Add clothes"/>
+          <text value="Add new clothes"/>
         </properties>
       </component>
       <component id="51454" class="javax.swing.JButton" binding="showClothingButton">
@@ -96,7 +90,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="List of clothes"/>
+          <text value="Wardrobe"/>
         </properties>
       </component>
       <component id="2b48e" class="javax.swing.JLabel">
@@ -236,6 +230,14 @@
           <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
+      <component id="80d5b" class="javax.swing.JButton" binding="updateButton">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Generate outfit and update weather"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

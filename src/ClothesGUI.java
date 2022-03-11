@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -25,11 +26,19 @@ public class ClothesGUI extends JFrame{
     private JButton showClothingButton;
     private final JLabel[] clothingSuggestionLabels = {headSuggestionLabel, bodySuggestionLabel,
                                                  legsSuggestionLabel, feetSuggestionLabel, accessoriesSuggestionLabel};
+
     public ClothesGUI(String title){
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
+
+        // centering
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        //System.out.println(dimension);
+        int x = (int) (dimension.getWidth())/2 - (this.getWidth()/2);
+        int y = (int) (dimension.getHeight())/2 - (this.getHeight()/2);
+        this.setBounds(x, y, this.getWidth(), this.getHeight());
 
 
         updateButton.addActionListener(new ActionListener() {

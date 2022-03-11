@@ -110,7 +110,7 @@ public class AddClothingDialog extends JDialog {
                 givenRealTemp[1] = (Integer) upperRealTempBound.getValue();
 
                 givenFeelsLikeTemp[0] = (Integer) lowerFeelsLikeBound.getValue();
-                givenFeelsLikeTemp[1] = (Integer) lowerFeelsLikeBound.getValue();
+                givenFeelsLikeTemp[1] = (Integer) upperFeelsLikeBound.getValue();
 
                 givenBodyPart = (String) bodyPartComboBox.getSelectedItem();
 
