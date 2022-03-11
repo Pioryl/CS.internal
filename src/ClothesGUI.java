@@ -17,15 +17,21 @@ public class ClothesGUI extends JFrame{
     private JLabel conditionsLabel;
     private JTextField countryTextField;
     private JLabel temperatureLabel;
+
+    private JLabel accessoriesSuggestionLabel;
     private JLabel headSuggestionLabel;
-    private JLabel bodySuggestionLabel;
+    private JLabel eyesSuggestionLabel;
+    private JLabel neckSuggestionLabel;
+    private JLabel body1SuggestionLabel;
+    private JLabel body2SuggestionLabel;
+    private JLabel handsSuggestionLabel;
     private JLabel legsSuggestionLabel;
     private JLabel feetSuggestionLabel;
-    private JLabel accessoriesSuggestionLabel;
+
     private JButton addClothing;
     private JButton showClothingButton;
-    private final JLabel[] clothingSuggestionLabels = {headSuggestionLabel, bodySuggestionLabel,
-                                                 legsSuggestionLabel, feetSuggestionLabel, accessoriesSuggestionLabel};
+    private JScrollBar scrollBar1;
+    private final JLabel[] clothingSuggestionLabels = {accessoriesSuggestionLabel, headSuggestionLabel, eyesSuggestionLabel, neckSuggestionLabel, body1SuggestionLabel, body2SuggestionLabel, handsSuggestionLabel, legsSuggestionLabel, feetSuggestionLabel};
 
     public ClothesGUI(String title){
         super(title);
@@ -65,7 +71,7 @@ public class ClothesGUI extends JFrame{
                                                                                     Double.parseDouble(data[1]),
                                                                                     Double.parseDouble(data[2]));
                     // lol thats wierd it has to be done
-                    for(int i = 0; i<5; i++) {
+                    for(int i = 0; i<9; i++) {
                         List<Clothing> suggestedClothingForBodyPart = sortedClothes.get(i);
                         System.out.println(suggestedClothingForBodyPart);
                         JLabel currentBodyPartLabel = clothingSuggestionLabels[i];

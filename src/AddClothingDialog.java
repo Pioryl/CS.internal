@@ -43,11 +43,16 @@ public class AddClothingDialog extends JDialog {
         firstPane.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 
         // adding options to combo box
+        bodyPartComboBox.addItem("accessories");
         bodyPartComboBox.addItem("head");
-        bodyPartComboBox.addItem("body");
+        bodyPartComboBox.addItem("eyes");
+        bodyPartComboBox.addItem("neck");
+        bodyPartComboBox.addItem("body1");
+        bodyPartComboBox.addItem("body2");
+        bodyPartComboBox.addItem("hands");
         bodyPartComboBox.addItem("legs");
         bodyPartComboBox.addItem("feet");
-        bodyPartComboBox.addItem("accessories");
+
 
         // Flow layout makes everything just flow into place, fucking magic!
         // on the other hand extremely messy probably should be changed...

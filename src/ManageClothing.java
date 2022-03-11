@@ -42,8 +42,12 @@ public class ManageClothing {
     public static ArrayList<ArrayList<Clothing> > suggestClothing(Clothing[] clothes, boolean rain, double realTemp, double feelsLikeTemp){
         // we know the length of the first array but not the second, and array of arraylist is illegal
         // therefore arraylist of arraylist
-        ArrayList<ArrayList<Clothing> > out = new ArrayList<ArrayList<Clothing> >(5);
+        ArrayList<ArrayList<Clothing> > out = new ArrayList<ArrayList<Clothing> >(9);
         // adding inside arraylists for every body part
+        out.add(new ArrayList<Clothing>());
+        out.add(new ArrayList<Clothing>());
+        out.add(new ArrayList<Clothing>());
+        out.add(new ArrayList<Clothing>());
         out.add(new ArrayList<Clothing>());
         out.add(new ArrayList<Clothing>());
         out.add(new ArrayList<Clothing>());
@@ -59,11 +63,15 @@ public class ManageClothing {
         // adding clothes to adequate parts of body
         // mapping names of body parts to indexes of output array
         Map<String, Integer> map = new HashMap<String, Integer>();
-        map.put("head", 0);
-        map.put("body", 1);
-        map.put("legs", 2);
-        map.put("feet", 3);
-        map.put("accessories", 4);
+        map.put("accessories", 0);
+        map.put("head", 1);
+        map.put("eyes", 2);
+        map.put("neck", 3);
+        map.put("body1", 4);
+        map.put("body2", 5);
+        map.put("hands", 6);
+        map.put("legs", 7);
+        map.put("feet", 8);
 
         for (Clothing clothing : clothes){
             int index = map.get(clothing.bodyPart);
