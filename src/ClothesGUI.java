@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -134,7 +136,55 @@ public class ClothesGUI extends JFrame{
             }
         });
 
+        /*
+        scrollBar1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                super.mouseClicked(e);
+                //grab the location
+                String city = cityTextField.getText();
+                String countryCode = countryTextField.getText();
+                boolean rain = false;
+                // updating the weather
+                try {
+                    String[] data = WeatherForecastRetrieval.timelineRequestHttpClient(city, countryCode);
+                    assert data != null;
+                    // setting the weather
+                    conditionsLabel.setText(data[0]);
+                    temperatureLabel.setText(data[1]);
+                    feelsLikeLabel.setText(data[2]);
+                    System.out.println(Arrays.toString(data));
+                    // marking rain
+                    rain = isSubString("rain", data[0]);
+                    // updating clothes
+                    Clothing[] clothes = ManageClothing.loadAllClothing("clothes/");
+                    ArrayList<ArrayList<Clothing>> sortedClothes = ManageClothing.suggestClothing(clothes, rain,
+                            Double.parseDouble(data[1]),
+                            Double.parseDouble(data[2]));
+                    // lol thats wierd it has to be done
+                    for(int i = 0; i<9; i++) {
+                        List<Clothing> suggestedClothingForBodyPart = sortedClothes.get(i);
+                        System.out.println(suggestedClothingForBodyPart);
+                        JLabel currentBodyPartLabel = clothingSuggestionLabels[i];
+
+                        if (!suggestedClothingForBodyPart.isEmpty()) {
+                            String name = suggestedClothingForBodyPart.get(1).name;
+                            System.out.println(name);
+                            currentBodyPartLabel.setText(name);
+                        } else {
+                            currentBodyPartLabel.setText("not added");
+                        }
+                    }
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+
+        });
+        */
     }
+
+
 
     //searching for "rain" in a larger string
     public static boolean isSubString(String string1, String string2) {
