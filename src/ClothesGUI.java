@@ -1,3 +1,5 @@
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,8 +10,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import javax.swing.*;
+import javax.swing.ImageIcon;
+
+import java.io.*;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
 
 public class ClothesGUI extends JFrame{
+
     private JPanel mainPanel;
     private JTextField cityTextField;
     private JLabel weatherForecast;
@@ -33,9 +46,27 @@ public class ClothesGUI extends JFrame{
     private JButton addClothing;
     private JButton showClothingButton;
     private JScrollBar scrollBar1;
+
+
     private final JLabel[] clothingSuggestionLabels = {accessoriesSuggestionLabel, headSuggestionLabel, eyesSuggestionLabel, neckSuggestionLabel, body1SuggestionLabel, body2SuggestionLabel, handsSuggestionLabel, legsSuggestionLabel, feetSuggestionLabel};
 
-    public ClothesGUI(String title){
+    /*
+    private void image(){
+        BufferedImage myPicture = null;
+        try {
+            myPicture = ImageIO.read(new File("bodydrawing.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        obr = new JLabel(new ImageIcon(myPicture));
+        pan = new JPanel();
+        pan.add(obr);
+        pan.setBounds(1, 1, 200, 200);
+    }
+*/
+
+
+    public ClothesGUI(String title)  {
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
@@ -47,6 +78,7 @@ public class ClothesGUI extends JFrame{
         int x = (int) (dimension.getWidth())/2 - (this.getWidth()/2);
         int y = (int) (dimension.getHeight())/2 - (this.getHeight()/2);
         this.setBounds(x, y, this.getWidth(), this.getHeight());
+
 
 
         updateButton.addActionListener(new ActionListener() {
@@ -207,7 +239,21 @@ public class ClothesGUI extends JFrame{
     public static void run(){
         JFrame frame = new ClothesGUI( "Clothes app");
         frame.setVisible(true);
+
+        //JLabel label1 = new JLabel();
+        //label1.setIcon(new ImageIcon("bodydrawing.jpg"));
+
+        //ImageIcon body = new ImageIcon("bodydrawing.jpg");
+        //panel1.setIcon(body);
+       // label1.setIcon(body);
+        //label1.validate();
     }
+
+
+        //JLabel label1 = new JLabel();
+        //label1.setIcon(new ImageIcon("bodydrawing.jpg"));
+        //label1.validate();
+
 
     public static void main(String[] args){
         JFrame frame = new ClothesGUI( "Clothes app");
@@ -216,5 +262,6 @@ public class ClothesGUI extends JFrame{
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
+        //label1 = new JLabel(new ImageIcon("bodydrawing.jpg"));
     }
 }

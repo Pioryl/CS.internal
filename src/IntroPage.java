@@ -1,13 +1,18 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 
 
 public class IntroPage {
     static void makeAFrame() {
-        int width = 400;
-        int height = 300;
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int)dimension.getWidth();
+        int height = (int)dimension.getHeight();
         frame = new JFrame("");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -15,7 +20,7 @@ public class IntroPage {
         frame.setLocationRelativeTo(null);
         panel.setLayout(null);
 
-        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+
         //System.out.println(dimension);
         int x = (int) (dimension.getWidth())/2 - (width/2);
         int y = (int) (dimension.getHeight())/2 - (height/2);
@@ -79,6 +84,18 @@ public class IntroPage {
         if (windowNum == 1){
 
             text.setText("this is how the program works 1");
+            text2.setText("sldikhvg");
+            text3.setText("ksrujhvfg");
+
+            BufferedImage myPicture = null;
+            try {
+                myPicture = ImageIO.read(new File("bodydrawing.jpg"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            JLabel obr = new JLabel(new ImageIcon(myPicture));
+            obr.setBounds(0,0,459,828);
+            panel.add(obr);
 
             JButton back = new JButton();
             back.setText("BACK");
