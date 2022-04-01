@@ -28,7 +28,7 @@
           <text value="City name"/>
         </properties>
       </component>
-      <component id="8312e" class="javax.swing.JLabel">
+      <component id="8312e" class="javax.swing.JLabel" binding="twoLetterCountryAbbreviationLabel">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -56,7 +56,7 @@
           <text value="PL"/>
         </properties>
       </component>
-      <component id="be5f0" class="javax.swing.JLabel">
+      <component id="be5f0" class="javax.swing.JLabel" binding="realTemperatureLabel">
         <constraints>
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -74,7 +74,7 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="ec091" class="javax.swing.JLabel">
+      <component id="ec091" class="javax.swing.JLabel" binding="feelsLikeTemperatureLabel">
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -92,7 +92,7 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="353cc" class="javax.swing.JLabel">
+      <component id="353cc" class="javax.swing.JLabel" binding="currentConditionsLabel">
         <constraints>
           <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -296,14 +296,6 @@
           <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
       </hspacer>
-      <component id="6b06d" class="javax.swing.JScrollBar" binding="scrollBar1" default-binding="true">
-        <constraints>
-          <grid row="11" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="0" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <orientation value="0"/>
-        </properties>
-      </component>
     </children>
   </grid>
 </form>

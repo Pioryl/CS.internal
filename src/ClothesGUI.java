@@ -45,7 +45,10 @@ public class ClothesGUI extends JFrame{
 
     private JButton addClothing;
     private JButton showClothingButton;
-    private JScrollBar scrollBar1;
+    private JLabel twoLetterCountryAbbreviationLabel;
+    private JLabel realTemperatureLabel;
+    private JLabel feelsLikeTemperatureLabel;
+    private JLabel currentConditionsLabel;
 
 
     private final JLabel[] clothingSuggestionLabels = {accessoriesSuggestionLabel, headSuggestionLabel, eyesSuggestionLabel, neckSuggestionLabel, body1SuggestionLabel, body2SuggestionLabel, handsSuggestionLabel, legsSuggestionLabel, feetSuggestionLabel};
@@ -72,12 +75,29 @@ public class ClothesGUI extends JFrame{
         this.setContentPane(mainPanel);
         this.pack();
 
+
+        locationLabel.setFont(new Font("Serif", Font. BOLD, 30));
+        twoLetterCountryAbbreviationLabel.setFont(new Font("Serif", Font. BOLD, 30));
+        weatherForecast.setFont(new Font("Serif", Font. BOLD, 20));
+        realTemperatureLabel.setFont(new Font("Serif", Font. BOLD, 20));
+        feelsLikeTemperatureLabel.setFont(new Font("Serif", Font. BOLD, 20));
+        currentConditionsLabel.setFont(new Font("Serif", Font. BOLD, 20));
+        updateButton.setFont(new Font("ComicSans", Font. BOLD, 20));
         // centering
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int)dimension.getWidth();
+        int height = (int)dimension.getHeight();
+        int sizeX = 240;
+        int sizeY = 100;
+        int W1 = width/3 - sizeX/2;
+        int H = 2*height/3 - sizeY/2;
+        int W2 = 2*width/3 - sizeX/2;
+        updateButton.setBounds(0, 0, sizeX, sizeY);
+
         //System.out.println(dimension);
         int x = (int) (dimension.getWidth())/2 - (this.getWidth()/2);
         int y = (int) (dimension.getHeight())/2 - (this.getHeight()/2);
-        this.setBounds(x, y, this.getWidth(), this.getHeight());
+        this.setBounds(0, 0, width, height);
 
 
 

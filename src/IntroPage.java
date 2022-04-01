@@ -54,14 +54,25 @@ public class IntroPage {
     }
     static void doEverything() {
 
-
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int)dimension.getWidth();
+        int height = (int)dimension.getHeight();
+        int sizeX = 240;
+        int sizeY = 100;
+        int W1 = width/3 - sizeX/2;
+        int H = 2*height/3 - sizeY/2;
+        int W2 = 2*width/3 - sizeX/2;
         makeAFrame();
         if (windowNum == 0){
+
+
+
             text.setText("This is the outfit creator");
+            text.setFont(new Font("Serif", Font. BOLD, 40));
 
             JButton Instructions = new JButton();
             Instructions.setText("Instructions");
-            Instructions.setBounds(65, 120, 120, 70);
+            Instructions.setBounds(W2, H, sizeX, sizeY);
             panel.add(Instructions);
             Instructions.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -69,9 +80,10 @@ public class IntroPage {
                 }
             });
 
+
             JButton start = new JButton();
             start.setText("START");
-            start.setBounds(215, 120, 120, 70);
+            start.setBounds(W1, H, sizeX, sizeY);
             panel.add(start);
             start.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -99,7 +111,7 @@ public class IntroPage {
 
             JButton back = new JButton();
             back.setText("BACK");
-            back.setBounds(75, 120, 100, 70);
+            back.setBounds(W1, H, sizeX, sizeY);
             panel.add(back);
             back.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -110,7 +122,7 @@ public class IntroPage {
 
             JButton next = new JButton();
             next.setText("NEXT");
-            next.setBounds(225, 120, 100, 70);
+            next.setBounds(W2, H, sizeX, sizeY);
             panel.add(next);
             next.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -125,7 +137,7 @@ public class IntroPage {
 
             JButton back = new JButton();
             back.setText("BACK");
-            back.setBounds(75, 120, 100, 70);
+            back.setBounds(W1, H, sizeX, sizeY);
             panel.add(back);
             back.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -136,7 +148,7 @@ public class IntroPage {
 
             JButton next = new JButton();
             next.setText("NEXT");
-            next.setBounds(225, 120, 100, 70);
+            next.setBounds(W2, H, sizeX, sizeY);
             panel.add(next);
             next.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -150,7 +162,7 @@ public class IntroPage {
 
             JButton back = new JButton();
             back.setText("BACK");
-            back.setBounds(75, 120, 100, 70);
+            back.setBounds(W1, H, sizeX, sizeY);
             panel.add(back);
             back.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -161,7 +173,7 @@ public class IntroPage {
 
             JButton start = new JButton();
             start.setText("START");
-            start.setBounds(225, 120, 100, 70);
+            start.setBounds(W2, H, sizeX, sizeY);
             panel.add(start);
             start.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
