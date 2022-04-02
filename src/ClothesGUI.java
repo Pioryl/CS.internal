@@ -1,36 +1,22 @@
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
-import javax.swing.*;
-import javax.swing.ImageIcon;
-
-import java.io.*;
-import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
 
 public class ClothesGUI extends JFrame{
 
     private JPanel mainPanel;
     private JTextField cityTextField;
+    private JTextField countryTextField;
+    private JButton updateButton;
     private JLabel weatherForecast;
     private JLabel locationLabel;
-    private JButton updateButton;
     private JLabel feelsLikeLabel;
     private JLabel conditionsLabel;
-    private JTextField countryTextField;
     private JLabel temperatureLabel;
 
     private JLabel accessoriesSuggestionLabel;
@@ -45,28 +31,13 @@ public class ClothesGUI extends JFrame{
 
     private JButton addClothing;
     private JButton showClothingButton;
+    private JButton helpButton;
     private JLabel twoLetterCountryAbbreviationLabel;
     private JLabel realTemperatureLabel;
     private JLabel feelsLikeTemperatureLabel;
     private JLabel currentConditionsLabel;
-
-
-    private final JLabel[] clothingSuggestionLabels = {accessoriesSuggestionLabel, headSuggestionLabel, eyesSuggestionLabel, neckSuggestionLabel, body1SuggestionLabel, body2SuggestionLabel, handsSuggestionLabel, legsSuggestionLabel, feetSuggestionLabel};
-
-    /*
-    private void image(){
-        BufferedImage myPicture = null;
-        try {
-            myPicture = ImageIO.read(new File("bodydrawing.jpg"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        obr = new JLabel(new ImageIcon(myPicture));
-        pan = new JPanel();
-        pan.add(obr);
-        pan.setBounds(1, 1, 200, 200);
-    }
-*/
+    private final JLabel[] clothingSuggestionLabels = {accessoriesSuggestionLabel, headSuggestionLabel, eyesSuggestionLabel,
+                    neckSuggestionLabel, body1SuggestionLabel, body2SuggestionLabel, handsSuggestionLabel, legsSuggestionLabel, feetSuggestionLabel};
 
 
     public ClothesGUI(String title)  {
@@ -76,14 +47,16 @@ public class ClothesGUI extends JFrame{
         this.pack();
 
 
-        locationLabel.setFont(new Font("Serif", Font. BOLD, 30));
-        twoLetterCountryAbbreviationLabel.setFont(new Font("Serif", Font. BOLD, 30));
-        weatherForecast.setFont(new Font("Serif", Font. BOLD, 20));
-        realTemperatureLabel.setFont(new Font("Serif", Font. BOLD, 20));
-        feelsLikeTemperatureLabel.setFont(new Font("Serif", Font. BOLD, 20));
-        currentConditionsLabel.setFont(new Font("Serif", Font. BOLD, 20));
-        updateButton.setFont(new Font("ComicSans", Font. BOLD, 20));
+        locationLabel.setFont(new Font("Rockwell", Font. PLAIN, 25));
+        twoLetterCountryAbbreviationLabel.setFont(new Font("Rockwell", Font. PLAIN, 25));
+        weatherForecast.setFont(new Font("Rockwell", Font. BOLD, 30));
+        realTemperatureLabel.setFont(new Font("Rockwell", Font. PLAIN, 20));
+        feelsLikeTemperatureLabel.setFont(new Font("Rockwell", Font. PLAIN, 20));
+        currentConditionsLabel.setFont(new Font("Rockwell", Font. PLAIN, 20));
+        updateButton.setFont(new Font("Rockwell", Font. BOLD, 20));
+
         // centering
+
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         int width = (int)dimension.getWidth();
         int height = (int)dimension.getHeight();
@@ -92,11 +65,9 @@ public class ClothesGUI extends JFrame{
         int W1 = width/3 - sizeX/2;
         int H = 2*height/3 - sizeY/2;
         int W2 = 2*width/3 - sizeX/2;
-        updateButton.setBounds(0, 0, sizeX, sizeY);
 
-        //System.out.println(dimension);
-        int x = (int) (dimension.getWidth())/2 - (this.getWidth()/2);
-        int y = (int) (dimension.getHeight())/2 - (this.getHeight()/2);
+        updateButton.setBounds(0, 0, sizeX, sizeY);
+//System.out.println(dimension);
         this.setBounds(0, 0, width, height);
 
 
@@ -188,52 +159,16 @@ public class ClothesGUI extends JFrame{
             }
         });
 
-        /*
-        scrollBar1.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                super.mouseClicked(e);
-                //grab the location
-                String city = cityTextField.getText();
-                String countryCode = countryTextField.getText();
-                boolean rain = false;
-                // updating the weather
-                try {
-                    String[] data = WeatherForecastRetrieval.timelineRequestHttpClient(city, countryCode);
-                    assert data != null;
-                    // setting the weather
-                    conditionsLabel.setText(data[0]);
-                    temperatureLabel.setText(data[1]);
-                    feelsLikeLabel.setText(data[2]);
-                    System.out.println(Arrays.toString(data));
-                    // marking rain
-                    rain = isSubString("rain", data[0]);
-                    // updating clothes
-                    Clothing[] clothes = ManageClothing.loadAllClothing("clothes/");
-                    ArrayList<ArrayList<Clothing>> sortedClothes = ManageClothing.suggestClothing(clothes, rain,
-                            Double.parseDouble(data[1]),
-                            Double.parseDouble(data[2]));
-                    // lol thats wierd it has to be done
-                    for(int i = 0; i<9; i++) {
-                        List<Clothing> suggestedClothingForBodyPart = sortedClothes.get(i);
-                        System.out.println(suggestedClothingForBodyPart);
-                        JLabel currentBodyPartLabel = clothingSuggestionLabels[i];
-
-                        if (!suggestedClothingForBodyPart.isEmpty()) {
-                            String name = suggestedClothingForBodyPart.get(1).name;
-                            System.out.println(name);
-                            currentBodyPartLabel.setText(name);
-                        } else {
-                            currentBodyPartLabel.setText("not added");
-                        }
-                    }
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            }
+        helpButton.addActionListener(new ActionListener(){
+                                   @Override
+                                   public void actionPerformed(ActionEvent e) {
+                                    IntroPage.doEverything();
+                                    //mainPanel.dispose();
+                                   }
 
         });
-        */
+
+
     }
 
 
@@ -256,32 +191,18 @@ public class ClothesGUI extends JFrame{
         }
         return false;
     }
+
     public static void run(){
         JFrame frame = new ClothesGUI( "Clothes app");
         frame.setVisible(true);
-
-        //JLabel label1 = new JLabel();
-        //label1.setIcon(new ImageIcon("bodydrawing.jpg"));
-
-        //ImageIcon body = new ImageIcon("bodydrawing.jpg");
-        //panel1.setIcon(body);
-       // label1.setIcon(body);
-        //label1.validate();
     }
 
-
-        //JLabel label1 = new JLabel();
-        //label1.setIcon(new ImageIcon("bodydrawing.jpg"));
-        //label1.validate();
-
-
     public static void main(String[] args){
-        JFrame frame = new ClothesGUI( "Clothes app");
+        JFrame frame = new ClothesGUI( "Official cloth choosing algorithm");
         frame.setVisible(true);
     }
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
-        //label1 = new JLabel(new ImageIcon("bodydrawing.jpg"));
     }
 }

@@ -9,6 +9,14 @@ import javax.swing.*;
 
 
 public class IntroPage {
+
+    static int windowNum = 0;
+    static JLabel text;
+    static JLabel text2;
+    static JLabel text3;
+    static JFrame frame;
+    static Container panel;
+
     static void makeAFrame() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         int width = (int)dimension.getWidth();
@@ -39,19 +47,12 @@ public class IntroPage {
         panel.add(text3);
     }
 
-    static int windowNum = 0;
-    static JLabel text;
-    static JLabel text2;
-    static JLabel text3;
-    static JFrame frame;
-    static Container panel;
-
     static void next() {
         windowNum++;
-
         frame.dispose();
         doEverything();
     }
+
     static void doEverything() {
 
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
@@ -64,8 +65,6 @@ public class IntroPage {
         int W2 = 2*width/3 - sizeX/2;
         makeAFrame();
         if (windowNum == 0){
-
-
 
             text.setText("This is the outfit creator");
             text.setFont(new Font("Serif", Font. BOLD, 40));
@@ -95,10 +94,11 @@ public class IntroPage {
 
         if (windowNum == 1){
 
-            text.setText("this is how the program works 1");
-            text2.setText("sldikhvg");
-            text3.setText("ksrujhvfg");
+            text.setText("How to create an outfit?");
+            text2.setText("This is what the main page of the outfit generator will look like");
+            text3.setText("You must start with imputing your current location at the top of the page (Warsaw, PL by default). Then proceed by pressing the button.");
 
+            /*
             BufferedImage myPicture = null;
             try {
                 myPicture = ImageIO.read(new File("bodydrawing.jpg"));
@@ -108,6 +108,7 @@ public class IntroPage {
             JLabel obr = new JLabel(new ImageIcon(myPicture));
             obr.setBounds(0,0,459,828);
             panel.add(obr);
+             */
 
             JButton back = new JButton();
             back.setText("BACK");
@@ -133,7 +134,9 @@ public class IntroPage {
         }
 
         if (windowNum == 2){
-            text.setText("this is how the program works 2");
+            text.setText("After pressing the update button information will be displayed.");
+            text2.setText("The current weather conditions, including real and feels-like temperature and current atmospheric conditions, will be visible on the left.");
+            text3.setText("The newly generated outfit, with every item, will be visible on the right.");
 
             JButton back = new JButton();
             back.setText("BACK");
@@ -158,7 +161,7 @@ public class IntroPage {
         }
 
         if (windowNum == 3){
-            text.setText("this is how the program works last");
+            text.setText("Adding more clothes and wardrobe view");
 
             JButton back = new JButton();
             back.setText("BACK");
@@ -183,70 +186,11 @@ public class IntroPage {
             });
 
         }
-        /*
-        if (windowNum == 4){
 
-            if (option == "sport"){
-                add = "(ubranie sportowe)";
-                if (rain == "yes") {
-                    add = "(ubranie sportowe) and a rain jacket";
-                }
-
-            }
-            if (option == "school") {;
-                add = "(ubranie zwykle)";
-                if (rain == "yes") {
-                    add = "(ubranie zwykle) and an umbrella";
-                }
-            }
-            if (option == "elegant") {
-                add = "(ubranie eleganckie)";
-                if (rain == "yes") {
-                    add = "(ubranie eleganckie) and an umbrella";
-                }
-            }
-            if (option == "party!") {
-                add = "(ubranie imprezowe)";
-                if (rain == "yes") {
-                    add = "(ubranie imprezowe) and a rain jacket";
-                }
-            }
-
-            text.setText("For this type of activity: " + option + ",");
-            text2.setText("we recommend " + add + ".");
-            text3.setText("Remember it's " + tempr + " degrees outside!");
-
-            JButton ok = new JButton("NEXT");
-            ok.setText("NEXT");
-            ok.setBounds(100, 150, 200, 70);
-            panel.add(ok);
-
-            ok.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    next();
-                }
-            });
-
-        }
-        if (windowNum == 5){
-            text.setText("Thank you for choosing our services!");
-            text2.setText("Btw you look good today.");
-
-            JButton close= new JButton();
-            close.setText("Close program");
-            close.setBounds(100, 150, 200, 70);
-            panel.add(close);
-            close.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    frame.dispose();
-                }
-            });
-        }
-*/
     }
+
     public static void main(String[] args) {
         doEverything();
     }
-
 
 }
