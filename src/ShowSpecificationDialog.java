@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class ShowSpecificationDialog extends JDialog {
 
@@ -51,12 +49,7 @@ public class ShowSpecificationDialog extends JDialog {
 
 
         // closing dialog
-        closeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ShowSpecificationDialog.this.setVisible(false);
-            }
-        });
+        closeButton.addActionListener(e -> ShowSpecificationDialog.this.setVisible(false));
 
     }
 }

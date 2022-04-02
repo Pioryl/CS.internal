@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 //dialog for adding new clothing
 public class AddClothingDialog extends JDialog {
@@ -16,7 +14,7 @@ public class AddClothingDialog extends JDialog {
     // GUI interface parts
     // for input
     JTextField nameField = new JTextField(20);
-    JComboBox<String> bodyPartComboBox = new JComboBox<String>();
+    JComboBox<String> bodyPartComboBox = new JComboBox<>();
 
     JSpinner lowerRealTempBound = new JSpinner(new SpinnerNumberModel(0, -30, 50, 5));
     JSpinner upperRealTempBound = new JSpinner(new SpinnerNumberModel(0, -30, 50, 5));
@@ -104,36 +102,28 @@ public class AddClothingDialog extends JDialog {
         contentPane.add(thirdPane);
         contentPane.add(closingPane);
 
-        okButton.addActionListener(new ActionListener(){
+        okButton.addActionListener(e -> {
+            // saving values of input to variables
+            name = nameField.getText();
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // saving values of input to variables
-                name = nameField.getText();
+            givenRealTemp[0] = (Integer) lowerRealTempBound.getValue();
+            givenRealTemp[1] = (Integer) upperRealTempBound.getValue();
 
-                givenRealTemp[0] = (Integer) lowerRealTempBound.getValue();
-                givenRealTemp[1] = (Integer) upperRealTempBound.getValue();
+            givenFeelsLikeTemp[0] = (Integer) lowerFeelsLikeBound.getValue();
+            givenFeelsLikeTemp[1] = (Integer) upperFeelsLikeBound.getValue();
 
-                givenFeelsLikeTemp[0] = (Integer) lowerFeelsLikeBound.getValue();
-                givenFeelsLikeTemp[1] = (Integer) upperFeelsLikeBound.getValue();
+            givenBodyPart = (String) bodyPartComboBox.getSelectedItem();
 
-                givenBodyPart = (String) bodyPartComboBox.getSelectedItem();
+            givenWaterResistance = waterResistanceCheckBox.isSelected();
 
-                givenWaterResistance = waterResistanceCheckBox.isSelected();
+            canceled = false;
 
-                canceled = false;
-
-                AddClothingDialog.this.setVisible(false);
-            }
+            AddClothingDialog.this.setVisible(false);
         });
 
-        cancelButton.addActionListener(new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                canceled = true;
-                AddClothingDialog.this.setVisible(false);
-            }
+        cancelButton.addActionListener(e -> {
+            canceled = true;
+            AddClothingDialog.this.setVisible(false);
         });
     }
 }

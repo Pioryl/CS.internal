@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 
 public class ShowClothingDialog extends JDialog {
@@ -33,27 +31,21 @@ public class ShowClothingDialog extends JDialog {
             JButton info = new JButton();
             info.setText("info");
 
-            info.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    ShowSpecificationDialog showSpecificationDialog = new ShowSpecificationDialog(
-                            ShowClothingDialog.this,
-                            "clothing information",
-                            clothing);
-                    showSpecificationDialog.setVisible(true);
-                }
+            info.addActionListener(e -> {
+                ShowSpecificationDialog showSpecificationDialog = new ShowSpecificationDialog(
+                        ShowClothingDialog.this,
+                        "clothing information",
+                        clothing);
+                showSpecificationDialog.setVisible(true);
             });
 
             JButton removeClothingButton = new JButton();
             removeClothingButton.setText("remove");
-            removeClothingButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    System.out.println(clothing.name);
-                    ManageClothing.deleteClothing(clothing.name);
-                    reopen = true;
-                    ShowClothingDialog.this.setVisible(false);
-                }
+            removeClothingButton.addActionListener(e -> {
+                System.out.println(clothing.name);
+                ManageClothing.deleteClothing(clothing.name);
+                reopen = true;
+                ShowClothingDialog.this.setVisible(false);
             });
 
             temporaryPane.add(name);
@@ -72,13 +64,7 @@ public class ShowClothingDialog extends JDialog {
         contentPane.add(okButton);
 
 
-        okButton.addActionListener(new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ShowClothingDialog.this.setVisible(false);
-            }
-        });
+        okButton.addActionListener(e -> ShowClothingDialog.this.setVisible(false));
     }
 
 }
