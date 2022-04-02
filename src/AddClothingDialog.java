@@ -18,11 +18,11 @@ public class AddClothingDialog extends JDialog {
     JTextField nameField = new JTextField(20);
     JComboBox<String> bodyPartComboBox = new JComboBox<String>();
 
-    JSpinner lowerRealTempBound = new JSpinner(new SpinnerNumberModel(0, -30, 50, 1));
-    JSpinner upperRealTempBound = new JSpinner(new SpinnerNumberModel(0, -30, 50, 1));
+    JSpinner lowerRealTempBound = new JSpinner(new SpinnerNumberModel(0, -30, 50, 5));
+    JSpinner upperRealTempBound = new JSpinner(new SpinnerNumberModel(0, -30, 50, 5));
 
-    JSpinner lowerFeelsLikeBound = new JSpinner(new SpinnerNumberModel(0, -30, 50, 1));
-    JSpinner upperFeelsLikeBound = new JSpinner(new SpinnerNumberModel(0, -30, 50, 1));
+    JSpinner lowerFeelsLikeBound = new JSpinner(new SpinnerNumberModel(0, -30, 50, 5));
+    JSpinner upperFeelsLikeBound = new JSpinner(new SpinnerNumberModel(0, -30, 50, 5));
 
     JCheckBox waterResistanceCheckBox = new JCheckBox();
 
@@ -36,7 +36,7 @@ public class AddClothingDialog extends JDialog {
     public AddClothingDialog(Frame owner, String title){
         // making the dialog
         super(owner, title);
-        setBounds(100, 100, 400, 400);
+        setBounds(100, 100, 600, 350);
         Container dialogContent = getContentPane();
         JPanel firstPane = new JPanel();
         firstPane.setLayout(new BoxLayout(firstPane, BoxLayout.PAGE_AXIS));
@@ -62,7 +62,7 @@ public class AddClothingDialog extends JDialog {
         firstPane.add(new JLabel("body part: "));
         firstPane.add(bodyPartComboBox);
 
-        firstPane.add(new JLabel("lower and upper temperature for clothing: "));
+        firstPane.add(new JLabel("temperature boundaries for clothing: "));
         // secondary pane and box layout for spinners to be next to each other, below the same applies
         JPanel realTempPane = new JPanel();
         realTempPane.setLayout(new BoxLayout(realTempPane, BoxLayout.LINE_AXIS));
@@ -74,8 +74,8 @@ public class AddClothingDialog extends JDialog {
         secondPane.setLayout(new BoxLayout(secondPane, BoxLayout.PAGE_AXIS));
         secondPane.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 
-        secondPane.add(new JLabel("lower and upper feels like temperature for clothing: "));
-        secondPane.add(new JLabel("hint this metric takes thing like wind and strong sunshine into consideration"));
+        secondPane.add(new JLabel("feels like temperature boundaries: "));
+        secondPane.add(new JLabel("hint: this metric takes takes into account e.g. wind or strong sunshine"));
         JPanel feelsLikePane = new JPanel();
         feelsLikePane.setLayout(new BoxLayout(feelsLikePane, BoxLayout.LINE_AXIS));
         feelsLikePane.add(lowerFeelsLikeBound);

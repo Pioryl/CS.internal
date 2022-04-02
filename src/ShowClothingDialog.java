@@ -15,7 +15,9 @@ public class ShowClothingDialog extends JDialog {
         // making the dialog
         super(owner, title);
         clothes = givenClothes;
-        setBounds(100,100, 300, 400);
+        int numOfCloth = clothes.length;
+        //System.out.println(numOfCloth);
+        setBounds(100,100, 300, (numOfCloth*57));
         mainPane.setLayout(new BoxLayout(mainPane, BoxLayout.PAGE_AXIS));
         Container contentPane = getContentPane();
         JPanel[] panes = new JPanel[clothes.length];
