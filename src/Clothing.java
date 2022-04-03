@@ -25,11 +25,15 @@ public class Clothing implements Serializable{
             this.rating = 100;
             // decreasing the rating by the distance from mean real and feel like temp
             int realMean = Math.abs(this.realTempRange[1] - this.realTempRange[0])/2;
+            //int realMean = (this.realTempRange[1] - this.realTempRange[0])/2;
             int distance = (int) Math.abs(realTemp - realMean);
+            //int distance = (int) (realTemp - realMean);
             this.rating -= distance;
 
             int feelsLikeMean = Math.abs(this.feelsLikeRange[1] - this.feelsLikeRange[0])/2;
+            //int feelsLikeMean = (this.feelsLikeRange[1] - this.feelsLikeRange[0])/2;
             distance = (int) Math.abs(feelsLikeTemp - feelsLikeMean);
+            //distance = (int) (feelsLikeTemp - feelsLikeMean);
             this.rating -= distance;
         }
     }

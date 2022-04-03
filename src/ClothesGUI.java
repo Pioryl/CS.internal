@@ -53,6 +53,7 @@ public class ClothesGUI extends JFrame{
         currentConditionsLabel.setFont(new Font("Rockwell", Font. PLAIN, 20));
         updateButton.setFont(new Font("Rockwell", Font. BOLD, 20));
 
+
         // centering
 
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
@@ -80,6 +81,12 @@ public class ClothesGUI extends JFrame{
                 conditionsLabel.setText(data[0]);
                 temperatureLabel.setText(data[1]);
                 feelsLikeLabel.setText(data[2]);
+
+                //feelsLikeLabel.setFont(new Font("Serif", Font. BOLD, 16));
+                //conditionsLabel.setFont(new Font("Serif", Font. BOLD, 16));
+                //temperatureLabel.setFont(new Font("Serif", Font. BOLD, 16));
+
+
                 System.out.println(Arrays.toString(data));
                 // marking rain
                 rain = isSubString("rain", data[0]);
