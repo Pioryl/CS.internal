@@ -75,7 +75,7 @@ public class ManageClothing {
 
         for (Clothing clothing : clothes){
             int index = map.get(clothing.bodyPart);
-            System.out.println(out);
+            System.out.println("WWWWWWW OUT" + out);
             out.get(index).add(clothing);
         }
         return out;

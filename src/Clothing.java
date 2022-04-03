@@ -10,6 +10,7 @@ public class Clothing implements Serializable{
     int[] feelsLikeRange = {};
     String bodyPart;
     String name;
+
     boolean waterResistance;
     int rating;
     public Clothing(String givenName, int[] givenRealTempRange, int[] givenFeelsLikeRange, String givenBodyPart, boolean givenWaterResistance){
@@ -24,17 +25,29 @@ public class Clothing implements Serializable{
         if (!rain || this.waterResistance){
             this.rating = 100;
             // decreasing the rating by the distance from mean real and feel like temp
-            int realMean = Math.abs(this.realTempRange[1] - this.realTempRange[0])/2;
-            //int realMean = (this.realTempRange[1] - this.realTempRange[0])/2;
-            int distance = (int) Math.abs(realTemp - realMean);
-            //int distance = (int) (realTemp - realMean);
-            this.rating -= distance;
 
-            int feelsLikeMean = Math.abs(this.feelsLikeRange[1] - this.feelsLikeRange[0])/2;
+            int realMean = this.realTempRange[0] + (Math.abs(this.realTempRange[1] - this.realTempRange[0])/2);
+            System.out.println("/n"+ "name: "+ name);
+            System.out.println("this.realTempRange[1] " + this.realTempRange[1]);
+            System.out.println("this.realTempRange[0] " + this.realTempRange[0]);
+            System.out.println("realMean " + realMean);
+            //int realMean = (this.realTempRange[1] - this.realTempRange[0])/2;
+            int distance = (int) (Math.max(realTemp, realMean) - Math.min(realTemp, realMean));
+            System.out.println("(int) Math.abs(realTemp - realMean) " + distance);
+            this.rating -= distance;
+            System.out.println("this.rating -= distance " + this.rating);
+
+
+            int feelsLikeMean = this.feelsLikeRange[0] + (Math.abs(this.feelsLikeRange[1] - this.feelsLikeRange[0])/2);
+            System.out.println("this.feelsLikeRange[1] " + this.feelsLikeRange[1]);
+            System.out.println("this.feelsLikeRange[0] " + this.feelsLikeRange[0]);
+            System.out.println("feelsLikeMean " + feelsLikeMean);
             //int feelsLikeMean = (this.feelsLikeRange[1] - this.feelsLikeRange[0])/2;
-            distance = (int) Math.abs(feelsLikeTemp - feelsLikeMean);
+            distance = (int) (Math.max(feelsLikeTemp, feelsLikeMean) - Math.min(feelsLikeTemp, feelsLikeMean));
+            System.out.println("distance " + distance);
             //distance = (int) (feelsLikeTemp - feelsLikeMean);
             this.rating -= distance;
+            System.out.println("FINAL this.rating -= distance " + this.rating);
         }
     }
 
