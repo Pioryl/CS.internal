@@ -1,0 +1,151 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "IntroPage",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1419622661 { 
+   	label=IntroPage
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   IntroPage1419622661[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)IntroPage</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># doEverything()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+<TR><TD ALIGN="LEFT" ># makeAFrame()</TD></TR>
+<TR><TD ALIGN="LEFT" ># next()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_910778355 { 
+   	label=ClothesGUI
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   ClothesGUI910778355[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ClothesGUI</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   addClothing: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bodySuggestionLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   cityTextField: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   clothingSuggestionLabels: JLabel[] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   conditionsLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   countryTextField: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   feelsLikeLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   feetSuggestionLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   headSuggestionLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   legsSuggestionLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   locationLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mainPanel: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   showClothingButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   temperatureLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   updateButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   weatherForecast: JLabel [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- createUIComponents()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ isSubString(string1: String, string2: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+<TR><TD ALIGN="LEFT" >+ run()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+
+    
+}
+@enduml

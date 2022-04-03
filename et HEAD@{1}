@@ -1,0 +1,17 @@
+[33m0982228[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{0}: reset: moving to 098222818ed30b16fafa8899743bc18618cb78c3
+[33mf61b6b5[m HEAD@{1}: commit: just a commit
+[33m0c4a4e2[m HEAD@{2}: commit: fixed wrong clothe error
+[33me2ba45c[m HEAD@{3}: commit: dodanie zdjęć
+[33ma291e6f[m HEAD@{4}: commit: ulepszenia
+[33ma951ae1[m HEAD@{5}: commit: new clothes + multiple gui and other minor changes
+[33m32c9741[m HEAD@{6}: commit: image in intro
+[33m6d08fc0[m HEAD@{7}: commit: image in intro
+[33m8d86362[m HEAD@{8}: commit: image in intro
+[33m5cd44a1[m HEAD@{9}: commit: new outfits in comments
+[33m47a6e5d[m HEAD@{10}: commit: adding all clothe types
+[33m3df786b[m HEAD@{11}: commit: centering
+[33m4728ac0[m HEAD@{12}: checkout: moving from 098222818ed30b16fafa8899743bc18618cb78c3 to master
+[33m0982228[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{13}: checkout: moving from master to 098222818ed30b16fafa8899743bc18618cb78c3
+[33m4728ac0[m HEAD@{14}: reset: moving to 4728ac09fbdfa011904b41ea04d209cdeebbbffe
+[33m4728ac0[m HEAD@{15}: commit: working version
+[33m0982228[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{16}: commit (initial): working version
