@@ -38,15 +38,15 @@ config=StructureConfiguration;
     "cutEnum": true,
     "cutTests": true,
     "cutClient": true,
-    "cutDataAccess": true,
-    "cutInterfaceStructures": true,
-    "cutDataStructures": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
     "cutGetterAndSetter": true,
     "cutConstructors": true
   },
   "graphTraversal": {
-    "forwardDepth": 3,
-    "backwardDepth": 3,
+    "forwardDepth": 6,
+    "backwardDepth": 6,
     "classPackageExcludeFilter": "",
     "classPackageIncludeFilter": "",
     "classNameExcludeFilter": "",
@@ -115,24 +115,33 @@ subgraph cluster_910778355 {
 	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
 <TR><TD ALIGN="LEFT" >(C)ClothesGUI</TD></TR>
 <HR/>
+<TR><TD ALIGN="LEFT" >-   accessoriesSuggestionLabel: JLabel [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   addClothing: JButton [0..1]</TD></TR>
-<TR><TD ALIGN="LEFT" >-   bodySuggestionLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   body1SuggestionLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   body2SuggestionLabel: JLabel [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   cityTextField: JTextField [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   clothingSuggestionLabels: JLabel[] [0..*]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   conditionsLabel: JLabel [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   countryTextField: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   currentConditionsLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eyesSuggestionLabel: JLabel [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   feelsLikeLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   feelsLikeTemperatureLabel: JLabel [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   feetSuggestionLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   handsSuggestionLabel: JLabel [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   headSuggestionLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   helpButton: JButton [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   legsSuggestionLabel: JLabel [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   locationLabel: JLabel [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   mainPanel: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   neckSuggestionLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   realTemperatureLabel: JLabel [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   showClothingButton: JButton [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   temperatureLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   twoLetterCountryAbbreviationLabel: JLabel [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   updateButton: JButton [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   weatherForecast: JLabel [0..1]</TD></TR>
 <HR/>
-<TR><TD ALIGN="LEFT" >- createUIComponents()</TD></TR>
 <TR><TD ALIGN="LEFT" >+ isSubString(string1: String, string2: String): boolean</TD></TR>
 <TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
 <TR><TD ALIGN="LEFT" >+ run()</TD></TR>

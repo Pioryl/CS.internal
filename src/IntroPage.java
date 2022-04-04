@@ -71,6 +71,7 @@ public class IntroPage {
         int H = 4*height/5 - sizeY/2;
         int W2 = 2*width/3 - sizeX/2;
         makeAFrame();
+
         if (windowNum == 0){
 
             text2.setText("This is the outfit creator");

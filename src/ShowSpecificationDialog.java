@@ -8,7 +8,6 @@ public class ShowSpecificationDialog extends JDialog {
     JLabel feelsLikeTempRangeLabel = new JLabel();
     JLabel bodyPartLabel = new JLabel();
     JLabel waterResistanceLabel = new JLabel();
-
     JButton closeButton = new JButton();
 
     public ShowSpecificationDialog(ShowClothingDialog owner, String title, Clothing clothing) {

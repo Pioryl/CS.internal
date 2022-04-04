@@ -170,7 +170,7 @@ public class ClothesGUI extends JFrame{
 
         helpButton.addActionListener(e -> {
          IntroPage.doEverything();
-         //mainPanel.dispose();
+         //panel.dispose();
         });
 
 

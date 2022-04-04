@@ -1,9 +1,8 @@
 @startuml
 
 /' diagram meta data start
-config=CallConfiguration;
+config=StructureConfiguration;
 {
-  "rootMethod": "IntroPage#main(String[])",
   "projectClassification": {
     "searchMode": "OpenProject", // OpenProject, AllProjects
     "includedProjects": "",
@@ -39,15 +38,15 @@ config=CallConfiguration;
     "cutEnum": true,
     "cutTests": true,
     "cutClient": true,
-    "cutDataAccess": true,
-    "cutInterfaceStructures": true,
-    "cutDataStructures": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
     "cutGetterAndSetter": true,
     "cutConstructors": true
   },
   "graphTraversal": {
-    "forwardDepth": 3,
-    "backwardDepth": 3,
+    "forwardDepth": 6,
+    "backwardDepth": 6,
     "classPackageExcludeFilter": "",
     "classPackageIncludeFilter": "",
     "classNameExcludeFilter": "",
@@ -63,15 +62,15 @@ config=CallConfiguration;
   },
   "details": {
     "aggregation": "GroupByClass", // ByClass, GroupByClass, None
-    "showMethodParametersTypes": false,
-    "showMethodParametersNames": false,
-    "showMethodReturnType": false,
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
     "showPackageLevels": 2,
-    "showCallOrder": false,
-    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
-    "showDetailedClassStructure": false
+    "showDetailedClassStructure": true
   },
-  "rootClass": "IntroPage",
+  "rootClass": "clothingComparator",
   "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
 }
 diagram meta data end '/
@@ -79,62 +78,32 @@ diagram meta data end '/
 
 
 digraph g {
-    rankdir="LR"
+    rankdir="TB"
     splines=polyline
     
 
 'nodes 
-subgraph cluster_1419622661 { 
-   	label=IntroPage
+subgraph cluster_1570166146 { 
+   	label=clothingComparator
 	labeljust=l
 	fillcolor="#ececec"
 	style=filled
    
-   subgraph cluster_1855103944 { 
-   	label=IntroPage
-	labeljust=l
-	fillcolor=white
+   clothingComparator1570166146[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)clothingComparator</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ compare(clothing1: Clothing, clothing2: Clothing): int</TD></TR>
+</TABLE>>
 	style=filled
-   
-   IntroPage1419622661XXXmain1859653459[
-	label="+ main()"
-	style=filled
-	fillcolor=white
-	tooltip="IntroPage
-
-null"
-	penwidth=4
-	fontcolor=darkgreen
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
 ];
-} 
-} 
-
-subgraph cluster_910778355 { 
-   	label=ClothesGUI
-	labeljust=l
-	fillcolor="#ececec"
-	style=filled
-   
-   subgraph cluster_1668724942 { 
-   	label=ClothesGUI
-	labeljust=l
-	fillcolor=white
-	style=filled
-   
-   ClothesGUI910778355XXXrun0[
-	label="+ run()"
-	style=filled
-	fillcolor=white
-	tooltip="ClothesGUI
-
-null"
-	fontcolor=darkgreen
-];
-} 
 } 
 
 'edges    
-IntroPage1419622661XXXmain1859653459 -> ClothesGUI910778355XXXrun0;
+
     
 }
 @enduml
